@@ -1,0 +1,15 @@
+server {
+    listen 80;
+    listen 443 ssl;
+
+    ssl_certificate /certs/server-cert.pem;
+    ssl_certificate_key /certs/server-key.pem;
+
+    ssl_client_certificate /certs/ca-cert.pem;
+    # ssl_verify_depth ${VERIFY_DEPTH};
+    ssl_verify_client on;
+
+    location / {
+        proxy_pass ${PROXY_PASS_URL};
+    }
+}

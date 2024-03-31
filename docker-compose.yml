@@ -1,0 +1,10 @@
+services:
+  nginx:
+    build: .
+    volumes:
+      - ./certs:/certs
+    environment:
+      PROXY_PASS_URL: http://host.docker.internal:8081
+    ports:
+      - "9080:80"
+      - "9443:443"
