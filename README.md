@@ -1,6 +1,17 @@
 # mutual-tls-proxy
 Very small nginx setup to test mutual TLS.
 
+## Create certificates for nginx container
+Setup Certificate Authority and nginx server certificate:
+```
+./setup-nginx-cert.sh
+```
+
+If you want a additional certificate for your client you can use:
+```
+./create-cert.sh 1 common-name
+```
+
 ## Accessing nginx using client certificate
 Create a client certificate using the `create-cert.sh` script:
 ```
